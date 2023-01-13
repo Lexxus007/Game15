@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>15 game</title>
+	<link rel="icon" href="images/favicon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+	
+<body>
+	<template id="recordsRowTemplate">
+		<div>
+			<span id="recordsTemplatePlace">#</span>
+			<span id="recordsTemplateCol1">col1</span>
+			<span id="recordsTemplateCol2">col2</span>
+		</div>
+	</template>
+
+	<div id="controlPanel" class="screenField">
+		<button id="newGameBtn">New game</button>
+		<div>
+			<label for="totalRowsField">Rows:</label>
+			<select id="totalRowsField">
+				<option value=3>3</option>
+				<option value=4 selected>4</option>
+				<option value=5>5</option>
+				<option value=6>6</option>
+				<option value=7>7</option>
+				<option value=8>8</option>
+				<option value=9>9</option>
+				<option value=10>10</option>
+			</select>
+		</div>
+		<div>
+			<label for="totalColumnsField">Columns:</label>
+			<select id="totalColumnsField">
+				<option value=3>3</option>
+				<option value=4 selected>4</option>
+				<option value=5>5</option>
+				<option value=6>6</option>
+				<option value=7>7</option>
+				<option value=8>8</option>
+				<option value=9>9</option>
+				<option value=10>10</option>
+			</select>
+		</div>
+		<button id="pauseBtn">Pause</button>
+	</div>
+		
+	<main>
+		<aside>
+			<div id="statistics" class="screenField">
+				<div>
+					Moves:<span id="movesCountField">0</span>
+				</div>
+				<div>
+					Time: <span id="timeCountField">00:00</span>
+				</div>
+			</div>
+			
+			<div class="screenField">
+				Top 5 by moves
+				<br/>
+				<br/>
+				<div id="movesRecords">
+					<div><span>#</span><span>Moves</span><span>Time</span></div>
+					<div><span>#</span><span>Moves</span><span>Time</span></div>
+					<div><span>#</span><span>Moves</span><span>Time</span></div>
+					<div><span>#</span><span>Moves</span><span>Time</span></div>
+					<div><span>#</span><span>Moves</span><span>Time</span></div>
+					<div><span>#</span><span>Moves</span><span>Time</span></div>
+				</div>
+			</div>
+			
+			<div class="screenField">
+				Top 5 by time
+				<br/>
+				<br/>
+				<div id="timeRecords">
+					<div><span>#</span><span>Time</span><span>Moves</span></div>
+					<div><span>#</span><span>Time</span><span>Moves</span></div>
+					<div><span>#</span><span>Time</span><span>Moves</span></div>
+					<div><span>#</span><span>Time</span><span>Moves</span></div>
+					<div><span>#</span><span>Time</span><span>Moves</span></div>
+					<div><span>#</span><span>Time</span><span>Moves</span></div>
+				</div>
+			</div>
+		</aside>
+
+		<div id="board">
+	
+		</div>
+		
+		<div id="pausedElement" class="hideElement">
+			Game Is Paused
+		</div>
+	</main>
+	
+	<script src="js/tile_class.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
