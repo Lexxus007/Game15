@@ -70,6 +70,10 @@ aside {
 	background-color: #F2F2F2;
 }
 
+.screenField h4 {
+	margin: 0 0 20px 0;
+}
+
 .tile {
 	border: solid black 1px;
 	border-radius: 12px;
