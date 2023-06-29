@@ -11,7 +11,7 @@ function makeStartBoardAndOptions(savedPosition) {
 	
 	if (savedPosition){
 		savedPosition.tilesPos.forEach(tile => {
-			tiles.push(new Tile(tile.numberOfTile, tile.column, tile.row, tileSize, tilesQuantity, tileMoveTime));
+			tiles.push(new Tile(tile.numberOfTile, tile.column, tile.row, tileSize, tilesQuantity/* , tileMoveTime */));
 		});
 		stopwatchCounter = savedPosition.stopwatchCounter;
 		movesCountField.innerHTML = savedPosition.moovesCount;
@@ -26,7 +26,7 @@ function makeStartBoardAndOptions(savedPosition) {
 		for (let row = 1; row <= totalRows; row++){
 			for (let column = 1; column <= totalColumns; column++){
 				let numberOfTile = (row - 1) * totalColumns + column;
-				tiles.push(new Tile(numberOfTile, column, row, tileSize, tilesQuantity, tileMoveTime));
+				tiles.push(new Tile(numberOfTile, column, row, tileSize, tilesQuantity/* , tileMoveTime */));
 			}
 		}
 	}
@@ -76,7 +76,7 @@ function shuffle(){
 		for (let row = 1; row <= totalRows; row++){
 			for (let column = 1; column <= totalColumns; column++){
 				let numberOfTile = randomNumbers[(row - 1) * totalColumns + column - 1];
-				tiles.push(new Tile(numberOfTile, column, row, tileSize, tilesQuantity, tileMoveTime));
+				tiles.push(new Tile(numberOfTile, column, row, tileSize, tilesQuantity/* , tileMoveTime */));
 			}
 		}
 		

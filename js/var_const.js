@@ -1,5 +1,4 @@
 const maxBoardSize = 520;													//максимальний розмір дошки у px, висота або ширина
-const tileMoveTime = 90;													//час на пересування плитки
 const localStorageMovesRecordsKey = "game15movesRecords";					//ключ за яким зберігаються рекорди по кількості ходів
 const localStorageTimeRecordsKey = "game15timeRecords";					//ключ за яким зберігаються рекорди часу
 const localStoragePositionKey = "game15CurrentPosition";					//ключ за яким зберігається позиція плиток

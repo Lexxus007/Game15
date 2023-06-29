@@ -78,11 +78,11 @@ aside {
 	border: solid black 1px;
 	border-radius: 12px;
 	box-shadow: 5px 5px #CC9933, inset 0 0 30px #FAD07A;
-	margin: 4px;
 	text-align: center;
 	font-family: bold;
 	cursor: default;
 	position: absolute;
+	transition: all 130ms;
 }
 
 .nearTile {
