@@ -1,94 +1,95 @@
 body {
-	background-image: url(../images/work_table_2.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	min-width: 850px;
-	user-select: none;
+  background-image: url(../images/background_greed_blocks.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 aside {
-	float: left;
-	width: 14em;
+  float: left;
+  width: 14em;
 }
 
 #newGameBtn, #pauseBtn {
-	font-size: 18px;
-	border: solid 1px;
-	border-radius: 8px;
-	background-color: #D5D5D5;
+  font-size: 18px;
+  border: solid 1px;
+  border-radius: 8px;
+  background-color: #D5D5D5;
 }
-
 #newGameBtn:hover, #pauseBtn:hover {
-	background-color: #99CCFF;
+  background-color: #cbcbcb;
 }
 
 #controlPanel {
-	display: inline-block;
+  display: inline-block;
+}
+#controlPanel div {
+  margin: 5px 10px 0 10px;
+  display: inline;
 }
 
-#controlPanel div{
-	margin: 5px 10px 0 10px;
-	display: inline;
+#movesRecords span, #timeRecords span {
+  width: 3.6em;
+  display: inline-block;
+}
+#movesRecords span:first-child, #timeRecords span:first-child {
+  width: 0.9em;
+  display: inline-block;
 }
 
-#movesRecords span, #timeRecords span{
-	width: 3.6em;
-	display: inline-block;
-}
-
-#movesRecords span:first-child, #timeRecords span:first-child{
-	width: 0.9em;
-	display: inline-block;
-}
-
-#movesCountField, #timeCountField{
-	float: right;
+#movesCountField, #timeCountField {
+  float: right;
 }
 
 #board, #pausedElement {
-	float: left;
-	margin: 10px;
-	padding: 3px;
-	border: solid #994C00 8px;
-	border-radius: 22px;
-	box-shadow: 5px 5px #D8A674;
-	position: relative;
-	background-color: #F2F2F2;
+  float: left;
+  margin: 10px;
+  padding: 3px;
+  border: solid #1c4eac 8px;
+  border-radius: 22px;
+  -webkit-box-shadow: 5px 5px #d0ddf7;
+          box-shadow: 5px 5px #d0ddf7;
+  position: relative;
+  background-color: #F2F2F2;
 }
 
 #pausedElement {
-	text-align: center;
-	font-size: 30px;
+  text-align: center;
+  font-size: 30px;
 }
 
 .screenField {
-	font-size: 20px;
-	margin: 10px;
-	border: solid #994C00 5px;
-	padding: 10px;
-	border-radius: 15px;
-	background-color: #F2F2F2;
+  font-size: 20px;
+  margin: 10px;
+  border: solid #1c4eac 5px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #F2F2F2;
 }
-
 .screenField h4 {
-	margin: 0 0 20px 0;
+  margin: 0 0 20px 0;
 }
 
 .tile {
-	border: solid black 1px;
-	border-radius: 12px;
-	box-shadow: 5px 5px #CC9933, inset 0 0 30px #FAD07A;
-	text-align: center;
-	font-family: bold;
-	cursor: default;
-	position: absolute;
-	transition: all 130ms;
+  border: solid black 1px;
+  border-radius: 12px;
+  -webkit-box-shadow: 5px 5px #d39008, inset 0 0 30px #FAD07A;
+          box-shadow: 5px 5px #d39008, inset 0 0 30px #FAD07A;
+  text-align: center;
+  font-family: bold;
+  cursor: default;
+  position: absolute;
+  -webkit-transition: all 130ms;
+  transition: all 130ms;
 }
 
 .nearTile {
-	cursor: pointer;
+  cursor: pointer;
 }
 
-.hideElement{
-	display: none;
+.hideElement {
+  display: none;
 }
