@@ -4,12 +4,15 @@ class Tile {
 	#numberOfTile;				//номер плитки
 	#tileSize;					//розмір плитки у px
 	#tileElement;				//елемент що відображається
+	#tileMoveTime;				//час пересування плитки в мілісекундах
+	#moveTileIntervalHandler;
 	
-	constructor(numberOfTile, column, row, tileSize, tilesQuantity){
+	constructor(numberOfTile, column, row, tileSize, tilesQuantity, tileMoveTime){
 		this.#numberOfTile = numberOfTile;
 		this.#column = column;
 		this.#row = row;
 		this.#tileSize = tileSize;
+		this.#tileMoveTime = tileMoveTime;
 		
 		if (numberOfTile != tilesQuantity){
 			this.#tileElement = document.createElement("div");
@@ -30,8 +33,23 @@ class Tile {
 		this.#row = this.#row + directionY;
 	
 		if (this.#tileElement) {					//ігноруємо якщо такого елементу не існує, тобо це порожня клітина
-			this.#tileElement.style.left = (this.#tileSize + 10) * (this.#column - 1) + 3 + "px";
-			this.#tileElement.style.top = (this.#tileSize + 10) * (this.#row - 1) + 3 + "px";
+			let moveDistance = 0;
+			let tileMoveStep = 10 * this.#tileSize / this.#tileMoveTime;
+			let startLeftPosition = parseInt(this.#tileElement.style.left);
+			let startTopPosition = parseInt(this.#tileElement.style.top);
+			
+			this.#moveTileIntervalHandler = setInterval(() => {
+				moveDistance += tileMoveStep;
+				if (moveDistance < (this.#tileSize + 10)) {
+					this.#tileElement.style.left = startLeftPosition + moveDistance * directionX + "px";
+					this.#tileElement.style.top = startTopPosition + moveDistance * directionY + "px";
+				} else {
+					clearInterval(this.#moveTileIntervalHandler);
+					this.#moveTileIntervalHandler = null;
+					this.#tileElement.style.left = (this.#tileSize + 10) * (this.#column - 1) + 3 + "px";
+					this.#tileElement.style.top = (this.#tileSize + 10) * (this.#row - 1) + 3 + "px";
+				}
+			}, 10);
 		}
 	}
 	
@@ -53,6 +71,10 @@ class Tile {
 	
 	get numberOfTile() {
 		return this.#numberOfTile;
+	}
+	
+	get moveTileIntervalHandler() {
+		return this.#moveTileIntervalHandler;
 	}
 	
 	get tileElement() {

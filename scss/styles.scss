@@ -1,0 +1,102 @@
+$borderColor: #1c4eac;
+$backgroundFieldsColor: #F2F2F2;
+$buttonsColor: #D5D5D5;
+$tilesColor: #FAD07A;
+
+body {
+	background-image: url(../images/background_greed_blocks.jpg);
+	background-size: cover;
+	background-repeat: repeat;
+	// min-width: 850px;
+	user-select: none;
+}
+
+aside {
+	float: left;
+	width: 14em;
+}
+
+#newGameBtn, #pauseBtn {
+	font-size: 18px;
+	border: solid 1px;
+	border-radius: 8px;
+	background-color: $buttonsColor;
+
+    &:hover {
+	    background-color: darken($color: $buttonsColor, $amount: 4)/* #99CCFF */;
+    }
+}
+
+#controlPanel {
+	display: inline-block;
+    
+    div {
+	    margin: 5px 10px 0 10px;
+	    display: inline;
+    }
+}
+
+#movesRecords, #timeRecords {
+
+    span {
+        width: 3.6em;
+        display: inline-block;
+
+        &:first-child {
+            width: 0.9em;
+            display: inline-block;
+        }
+    }
+}
+
+#movesCountField, #timeCountField {
+	float: right;
+}
+
+#board, #pausedElement {
+	float: left;
+	margin: 10px;
+	padding: 3px;
+	border: solid $borderColor 8px;
+	border-radius: 22px;
+	box-shadow: 5px 5px lighten($borderColor, 50);
+	position: relative;
+	background-color: $backgroundFieldsColor;
+}
+
+#pausedElement {
+	text-align: center;
+	font-size: 30px;
+}
+
+.screenField {
+	font-size: 20px;
+	margin: 10px;
+	border: solid $borderColor 5px;
+	padding: 10px;
+	border-radius: 15px;
+	background-color: $backgroundFieldsColor;
+    
+    h4 {
+	    margin: 0 0 20px 0;
+    }
+}
+
+.tile {
+	border: solid black 1px;
+	border-radius: 12px;
+	box-shadow: 5px 5px darken($color: $tilesColor, $amount: 30)/* #CC9933 */, inset 0 0 30px $tilesColor /* #FAD07A */;
+	text-align: center;
+	font-family: bold;
+	cursor: default;
+	position: absolute;
+	transition: all 130ms;
+}
+
+.nearTile {
+	cursor: pointer;
+}
+
+.hideElement{
+	display: none;
+}
