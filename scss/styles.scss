@@ -7,12 +7,20 @@ body {
 	background-image: url(../images/background_greed_blocks.jpg);
 	background-size: cover;
 	background-repeat: repeat;
-	// min-width: 850px;
+	margin: 10px;
+	min-width: 560px;
 	user-select: none;
 }
 
+main {
+	display: flex;
+	gap: 10px;
+}
+
 aside {
-	float: left;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 	width: 14em;
 }
 
@@ -29,6 +37,7 @@ aside {
 
 #controlPanel {
 	display: inline-block;
+	margin-bottom: 10px;
     
     div {
 	    margin: 5px 10px 0 10px;
@@ -55,7 +64,6 @@ aside {
 
 #board, #pausedElement {
 	float: left;
-	margin: 10px;
 	padding: 3px;
 	border: solid $borderColor 8px;
 	border-radius: 22px;
@@ -71,7 +79,6 @@ aside {
 
 .screenField {
 	font-size: 20px;
-	margin: 10px;
 	border: solid $borderColor 5px;
 	padding: 10px;
 	border-radius: 15px;
@@ -99,4 +106,10 @@ aside {
 
 .hideElement{
 	display: none;
+}
+
+@media screen and (max-width:850px) {
+	main {
+		flex-direction: column-reverse;
+	}
 }
